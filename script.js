@@ -1,6 +1,6 @@
 // Choosing random pokemon
-let secretPokemonId = Math.floor(Math.random() * 151) + 1;
-console.log("Game started! Secret ID is:", secretPokemonId);
+let secretPokemonId = Math.floor(Math.random() * 1025) + 1;
+document.getElementById('target-number').innerText = secretPokemonId;
 
 // Fetching ID from PokeAPI
 async function getPokemonId(name) {
@@ -14,7 +14,6 @@ async function getPokemonId(name) {
         }
 
         const data = await response.json();
-        console.log(`Found ${data.name}! ID is: ${data.id}`);
         return data.id;
     } catch (error) {
         console.error("Connection error:", error);
